@@ -31,7 +31,17 @@ app.use((req, res, next)=>{
 // app.get('/user', (req, res) => { 
 //     res.send('user')
 // });
- 
+ app.get('/',(req,res)=> {
+    const str = ` 
+    <h1>root</h1>
+    GET : localhost:4500/makeup <br>
+    GET : localhost:4500/board<br>
+    POST : localhost:4500/board<br>
+    PUT : localhost:4500/board/:id<br>
+    DELETE : localhost:4500/board/:id<br>
+    `
+    res.send('root ')
+ })
 app.use('/makeup', require('./routes/makeup'));
 app.use('/board', require('./routes/board'));
 
